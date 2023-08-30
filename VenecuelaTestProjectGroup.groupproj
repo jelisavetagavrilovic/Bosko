@@ -1,0 +1,63 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{43CFA18D-9367-4F9C-A9AF-AEC72C34A3A0}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Server\Only_XData\XDataServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Client\VenecuelaTestClient.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="AppacheServer\mod_webtest.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="AppServer\mod_webtest.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="XDataServer">
+        <MSBuild Projects="Server\Only_XData\XDataServer.dproj"/>
+    </Target>
+    <Target Name="XDataServer:Clean">
+        <MSBuild Projects="Server\Only_XData\XDataServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="XDataServer:Make">
+        <MSBuild Projects="Server\Only_XData\XDataServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VenecuelaTestClient">
+        <MSBuild Projects="Client\VenecuelaTestClient.dproj"/>
+    </Target>
+    <Target Name="VenecuelaTestClient:Clean">
+        <MSBuild Projects="Client\VenecuelaTestClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VenecuelaTestClient:Make">
+        <MSBuild Projects="Client\VenecuelaTestClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="mod_webtest">
+        <MSBuild Projects="AppServer\mod_webtest.dproj"/>
+    </Target>
+    <Target Name="mod_webtest:Clean">
+        <MSBuild Projects="AppServer\mod_webtest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="mod_webtest:Make">
+        <MSBuild Projects="AppServer\mod_webtest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="XDataServer;VenecuelaTestClient;mod_webtest;mod_webtest"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="XDataServer:Clean;VenecuelaTestClient:Clean;mod_webtest:Clean;mod_webtest:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="XDataServer:Make;VenecuelaTestClient:Make;mod_webtest:Make;mod_webtest:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
