@@ -9,7 +9,7 @@ uses
 type
   [ServiceContract]
   IVenecuelaService = interface(IInvokable)
-    ['{2BB93BCE-25F5-4112-9E64-7981655C5519}']
+    ['{33ECD704-4451-44C8-8009-3620D93CF1DE}']
     [HttpGet]
     function GetCountries: TJSONArray;
     [HttpPost]

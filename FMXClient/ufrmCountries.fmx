@@ -1,0 +1,59 @@
+object frmCountry: TfrmCountry
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 141
+  ClientWidth = 391
+  Position = MainFormCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCloseQuery = FormCloseQuery
+  DesignerMasterStyle = 0
+  object Label1: TLabel
+    Position.X = 24.000000000000000000
+    Position.Y = 24.000000000000000000
+    Text = 'Country Short Name:'
+    TabOrder = 0
+  end
+  object edtShortName: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 1
+    Position.X = 160.000000000000000000
+    Position.Y = 24.000000000000000000
+    Size.Width = 217.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object lblCountryName: TLabel
+    Position.X = 24.000000000000000000
+    Position.Y = 64.000000000000000000
+    Text = 'Country Name'
+    TabOrder = 2
+  end
+  object edtCountry: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 3
+    Position.X = 160.000000000000000000
+    Position.Y = 64.000000000000000000
+    Size.Width = 217.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object btnSave: TButton
+    Anchors = [akRight, akBottom]
+    Position.X = 200.000000000000000000
+    Position.Y = 111.000000000000000000
+    TabOrder = 4
+    Text = 'Save'
+    OnClick = btnSaveClick
+  end
+  object btnClose: TButton
+    Anchors = [akRight, akBottom]
+    Position.X = 297.000000000000000000
+    Position.Y = 111.000000000000000000
+    TabOrder = 5
+    Text = 'Close'
+    OnClick = btnCloseClick
+  end
+end

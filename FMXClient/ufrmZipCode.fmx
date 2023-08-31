@@ -1,0 +1,70 @@
+object frmZipCode: TfrmZipCode
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 195
+  ClientWidth = 433
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCloseQuery = FormCloseQuery
+  DesignerMasterStyle = 0
+  object lblZipCode: TLabel
+    Position.X = 16.000000000000000000
+    Position.Y = 64.000000000000000000
+    Text = 'Zip Code'
+    TabOrder = 0
+  end
+  object lblCountry: TLabel
+    Align = Top
+    Size.Width = 433.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.HorzAlign = Center
+    Text = 'lblCountry'
+    TabOrder = 1
+  end
+  object edtZipCode: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    Anchors = [akLeft, akTop, akRight]
+    TabOrder = 2
+    Position.X = 144.000000000000000000
+    Position.Y = 64.000000000000000000
+    Size.Width = 273.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object lblCityName: TLabel
+    Position.X = 16.000000000000000000
+    Position.Y = 112.000000000000000000
+    Size.Width = 97.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'City Name'
+    TabOrder = 3
+  end
+  object edtCityName: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    Anchors = [akLeft, akTop, akRight]
+    TabOrder = 4
+    Position.X = 144.000000000000000000
+    Position.Y = 107.000000000000000000
+    Size.Width = 273.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object btnSave: TButton
+    Position.X = 240.000000000000000000
+    Position.Y = 165.000000000000000000
+    TabOrder = 5
+    Text = 'Save'
+    OnClick = btnSaveClick
+  end
+  object btnCancel: TButton
+    Position.X = 337.000000000000000000
+    Position.Y = 165.000000000000000000
+    TabOrder = 6
+    Text = 'Cancel'
+    OnClick = btnCancelClick
+  end
+end

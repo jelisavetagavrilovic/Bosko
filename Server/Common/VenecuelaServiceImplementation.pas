@@ -130,8 +130,18 @@ end;
 function TVenecuelaService.SetContacts(CountryID, FirstName, LastName, Address,
   Email, ZipCode: string): Boolean;
 var
-  SQL   : string;
+  SQL       : string;
+  idPerson  : Integer;
 begin
+  SQL   := 'select max(idPerson) from testvenecuela.contacts where idCountry = :idCountry';
+  try
+    idPerson := DM.FDConn.ExecSQLScalar(SQL, [CountryID], [ftWideString]);
+  except
+    idPerson  := 0;
+  end;
+
+  idPerson    := idPerson + 1;
+
   SQL   := 'INSERT INTO testvenecuela.contacts ' +
             '(idCountry, idPerson, Name, LastName, Address, Email, ' +
             'zipcode) VALUES ' +
@@ -143,8 +153,8 @@ begin
     DM.FDConn.StartTransaction;
   try
     DM.FDConn.ExecSQL(SQL,
-                      [CountryID, FirstName, LastName, Address, Email, zipcode],
-                      [ftWideString, ftWideString, ftWideString, ftWideString,
+                      [CountryID, idPerson, FirstName, LastName, Address, Email, zipcode],
+                      [ftWideString, ftInteger, ftWideString, ftWideString, ftWideString,
                       ftWideString, ftWideString]);
     DM.FDConn.Commit;
     Result    := True;

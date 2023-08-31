@@ -20,7 +20,6 @@ type
   private
     { Private declarations }
 
-    procedure CreateDatabase(DBName, UserName, Password: string);
   public
     { Public declarations }
   end;
@@ -45,18 +44,6 @@ uses
 var
   Server: TWebBrokerServer;
   Module : TXDataServerModule;
-
-procedure TWM.CreateDatabase(DBName, UserName, Password: string);
-begin
-//  FDConn.ExecSQL('CREATE DATABASE IF NOT EXISTS ' + DBname);
-//
-//  FDConn.Params.Values['Driver ID']     := 'MySQL';
-//  FDConn.Params.Database                := DBName;
-//  FDConn.Params.Values['LockingMode']   := 'Normal';
-//  FDConn.Params.Values['StringFormat']  := 'Unicode';
-//
-//  FDConn.Open(rootUserName, rootPwd);
-end;
 
 procedure TWM.WebModuleCreate(Sender: TObject);
 begin

@@ -1,4 +1,5 @@
 object FireDacMySqlConnection: TFireDacMySqlConnection
+  OnCreate = DataModuleCreate
   Height = 198
   Width = 282
   PixelsPerInch = 96
